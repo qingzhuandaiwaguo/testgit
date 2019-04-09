@@ -15,7 +15,10 @@ import java.util.concurrent.TimeUnit;
 @Repository
 public class RedisDao {
 
-    
+
+    /***
+     * add by guojing
+     */
     @Autowired
     private StringRedisTemplate stringRedisTemplate ;
 
