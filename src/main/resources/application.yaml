@@ -1,0 +1,31 @@
+######数据库连接配置#################
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/inte_idea?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+   #hikari 数据源配置
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+   #JP相关
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  #redis
+  redis:
+    host: localhost # Redis服务器地址
+    port: 6379     # Redis服务器连接端口
+    password:    # Redis服务器连接密码（默认为空）
+    database: 0  # Redis数据库索引（默认为0）
+    timeout: 5000ms      # 连接超时时间（毫秒）
+    jedis:
+      pool:
+        max-active: 8  # 连接池最大连接数（使用负值表示没有限制）
+        max-idle: 500  # 连接池中的最大空闲连接
+        max-wait: -1ms  # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        min-idle: 0  # 连接池中的最小空闲连接
